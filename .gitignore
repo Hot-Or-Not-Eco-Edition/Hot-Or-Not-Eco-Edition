@@ -3,7 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django
 
 ### Secret Django Key ###
-hotornotapp/hotornot_app/hotornot_app/secret_key.py
+hotornotapp/hotornot_app/hotornot_app/secret_key.json
 
 ### Django ###
 *.log
