@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django
 
+### Secret Django Key ###
+hotornotapp/hotornot_app/hotornot_app/secret_key.py
+
 ### Django ###
 *.log
 *.pot
