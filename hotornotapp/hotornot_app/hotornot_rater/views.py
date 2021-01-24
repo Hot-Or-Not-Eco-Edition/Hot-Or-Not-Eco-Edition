@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
+from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 # Create your views here.
@@ -8,7 +10,6 @@ def index(request):
 	return render(request, 'index.html', {})
 
 def signup(request):
-
 	if request.method == 'POST':
 		form = SignupForm(request.POST or None)
 
@@ -20,7 +21,14 @@ def signup(request):
 		return render(request, 'signup.html', {})
 
 def login(request):
-	return render(request, 'login.html', {})
+	if request.method == 'POST':
+		form = LoginForm(request.POST or None)
+		if form.is_valid():
+			return redirect('index')
+
+	else:
+		return render(request, 'login.html', {})
+
 
 def leaderboard(request):
 	leader = [['Toronto', '500'], ['Montreal', '400'], ['Vancouver', '300'], ['Calgary', '200'], ['Edmonton', '600'], ['Ottawa', '250'], ['Winnipeg', '350'], ['Quebec City', '175'], ['Kitchener', '256'], ['Halifax', '268'], ['Victoria', '412']]
