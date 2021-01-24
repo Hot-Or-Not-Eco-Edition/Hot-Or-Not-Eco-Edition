@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
 
 
 # Create your views here.
@@ -31,7 +31,6 @@ def login(request):
 
 
 def leaderboard(request):
-	leader = [['Toronto', '500'], ['Montreal', '400'], ['Vancouver', '300'], ['Calgary', '200'], ['Edmonton', '600'], ['Ottawa', '250'], ['Winnipeg', '350'], ['Quebec City', '175'], ['Kitchener', '256'], ['Halifax', '268'], ['Victoria', '412']]
-	leader = sorted(leader, key=lambda x: x[1], reverse=True)
-	context = {'data': leader}
+	db = ld.objects.all().order_by('-score')
+	context = {'data': db}
 	return render(request, 'leaderboard.html', context)
