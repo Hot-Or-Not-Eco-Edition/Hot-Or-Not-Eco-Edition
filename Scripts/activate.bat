@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\Jsbk0\Documents\CMPUT401\hotornoteco"
+set "VIRTUAL_ENV=C:\Users\Jsbk0\Documents\CMPUT401\hot_or_not_eco\Hot-Or-Not-Eco-Edition"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
