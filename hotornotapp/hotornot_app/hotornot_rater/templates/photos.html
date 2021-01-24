@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Photos
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<center>
+    <h1> Photos! </h1>
+
+    {% for pic in photos %}
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2">{{ pic.city }}</a>
+              <small class="text-muted">{{ pic.country}}</small>
+            </div>
+            
+            <img src="http://localhost:8000/media/{{pic.imageUploaded}}" style="width: 20%; height: 20%;" alt="http://localhost:8000/media/{{pic.imageUploaded}}">
+            <br>
+            <i class="fa fa-thumbs-up"></i>
+            <i class="fa fa-thumbs-down"></i>
+
+          </div>
+    {% endfor %}
+
+</center>
+
+{% endblock %}
