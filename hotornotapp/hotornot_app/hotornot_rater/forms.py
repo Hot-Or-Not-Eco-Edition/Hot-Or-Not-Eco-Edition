@@ -6,7 +6,12 @@ class ImagesForm(forms.ModelForm):
         model = Images 
         fields = ['city', 'country', 'imageUploaded'] 
 
-class SignupForm(forms.ModelForm): 
-    class Meta: 
-        model = User 
-        fields = ['username', 'password', 'first_name', 'last_name'] 
+class SignupForm(forms.ModelForm):
+	class Meta:
+		model = User
+		fields = ["username", "password", "first_name", "last_name"]
+
+class LoginForm(forms.ModelForm):
+	class Meta:
+		model = User
+		fields = ["username", "password"]
