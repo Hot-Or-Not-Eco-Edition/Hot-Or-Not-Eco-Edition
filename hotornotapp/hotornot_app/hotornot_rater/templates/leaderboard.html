@@ -1,1 +1,29 @@
 {% extends 'base.html' %}
+
+{% block title %}
+Leaderboard
+{% endblock %}
+
+{% block content %}
+<center>
+    <h1> Leaderboards! </h1>
+
+    <table  class="table" style="width: 50%">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" style="width: 1%">Rank</th>
+                <th scope="col" style="width: 25%">City</th>
+                <th scope="col" style="width: 1%">Score</th>
+            </tr>
+          </thead>
+        {% for i in data %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{i.0}}</td>
+            <td>{{i.1}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+{% endblock %}
