@@ -1,5 +1,10 @@
-from django import forms
+from django import forms 
 from .models import *
+  
+class ImagesForm(forms.ModelForm): 
+    class Meta: 
+        model = Images 
+        fields = ['city', 'country', 'imageUploaded'] 
 
 class SignupForm(forms.ModelForm):
 	class Meta:

@@ -12,10 +12,10 @@ class User(models.Model):
 class Images(models.Model):
 	city = models.CharField(max_length=200, default="")
 	country = models.CharField(max_length=200, default="")
-	imageUploaded = models.ImageField(null=True, blank=True)
+	imageUploaded = models.ImageField(upload_to='images/')
 	isHot = models.IntegerField(default=0)
 	isNot = models.IntegerField(default=0)
-	image_user = models.ForeignKey(User, default=0, on_delete=models.CASCADE)  # what did models.CASCADE do again? - delete all images linked to user if a user is deleted
+	#image_user = models.ForeignKey(User, default=0, on_delete=models.CASCADE)  # what did models.CASCADE do again? - delete all images linked to user if a user is deleted
 
 	def __str__(self):
 		return self.city
