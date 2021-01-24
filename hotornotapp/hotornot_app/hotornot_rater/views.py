@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse 
 from .models import *
 from .forms import *
 from django.conf import settings
@@ -26,7 +25,6 @@ def login(request):
 		form = LoginForm(request.POST or None)
 		if form.is_valid():
 			return redirect('index')
-
 	else:
 		return render(request, 'login.html', {})
 
@@ -55,4 +53,4 @@ def image_upload(request):
   
   
 def success(request): 
-    return HttpResponse('successfully uploaded') 
+    return render(request, 'success.html', {})
