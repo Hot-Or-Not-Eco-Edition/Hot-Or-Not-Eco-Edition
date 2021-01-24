@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='C:\Users\Jsbk0\Documents\CMPUT401\hotornoteco'
+VIRTUAL_ENV='C:\Users\Jsbk0\Documents\CMPUT401\hot_or_not_eco\Hot-Or-Not-Eco-Edition'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi
