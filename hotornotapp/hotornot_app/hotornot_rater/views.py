@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 
@@ -14,7 +14,7 @@ def signup(request):
 
 		if form.is_valid():
 			form.save()
-			return render(request, 'index.html', {})
+			return redirect('index')
 
 	else:
 		return render(request, 'signup.html', {})
